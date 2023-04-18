@@ -7,10 +7,17 @@ import { useState, useMemo } from 'react';
 const Product = ({name, colors, sizes, title, basePrice }) => {
 
   const [currentColor, setCurrentColor] = useState(colors[0]);
-  const [currentSize, setCurrentSize] = useState(sizes[0]);
+  const [currentSize, setCurrentSize] = useState(sizes[0].name);
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    console.log('SUMMARY')
+    console.log('============')
+    console.log('name:', title)
+    console.log('price:', getPrice)
+    console.log('color:', currentColor)
+    console.log('size:', currentSize)
   }  
 
   const getPrice = useMemo(() => {
